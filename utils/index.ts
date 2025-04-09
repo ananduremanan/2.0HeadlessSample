@@ -11,12 +11,6 @@ export const data = [
   { id: 1, name: "John Doe", age: 28 },
   { id: 2, name: "Jane Smith", age: 32 },
   { id: 1, name: "Smith Doe", age: 28 },
-  { id: 2, name: "Supa Smith", age: 32 },
-  { id: 1, name: "John Kun", age: 28 },
-  { id: 2, name: "Jane Udupi", age: 32 },
-  { id: 1, name: "Mia Doe", age: 28 },
-  { id: 2, name: "Sam Smith", age: 32 },
-  { id: 1, name: "John Krasinski", age: 28 },
 ];
 
 export const columns = [

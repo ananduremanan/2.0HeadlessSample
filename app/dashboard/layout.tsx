@@ -15,10 +15,10 @@ export default function DashBoardLayout({
   const isLandingPage = pathname.includes("/dashboard/landing");
 
   return (
-    <div className="min-h-screen flex">
+    <div className="min-h-screen flex overflow-hidden">
       {isLandingPage && <SideBarWrapper />}
       <Suspense>
-        <div className="w-full">{children}</div>
+        <div className="flex-1 overflow-x-auto">{children}</div>
       </Suspense>
     </div>
   );
