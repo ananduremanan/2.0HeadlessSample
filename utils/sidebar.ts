@@ -2,10 +2,10 @@ import { MenuData } from "@/component-lib/sidebar/type";
 
 // Sample menu data - this can be passed as a prop
 export const initialMenuData: MenuData = {
-  logo: {
-    name: "Sequence",
-    logoUrl: "/file.svg", // Replace with your actual logo path
-  },
+  // logo: {
+  //   name: "Sequence",
+  //   logoUrl: "/file.svg", // Replace with your actual logo path
+  // },
   sections: [
     {
       title: "GENERAL",

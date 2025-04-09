@@ -5,6 +5,8 @@ type SidebarLogoProps = {
 };
 
 export const SidebarLogo = ({ logo }: SidebarLogoProps) => {
+  if (!logo) return null;
+
   return (
     <div className="p-4 flex items-center">
       <div className="flex-shrink-0 mr-2">
