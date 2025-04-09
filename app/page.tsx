@@ -11,6 +11,7 @@ import {
 import { DataGrid } from "@/component-lib/datagrid";
 import { Dialog } from "@/component-lib/dialog";
 import { MultiSelect } from "@/component-lib/multiselect";
+import Sidebar from "@/component-lib/sidebar";
 import Skeleton from "@/component-lib/skeleton";
 import { useToast } from "@/component-lib/toast/useToast";
 import { columns, data, items } from "@/utils";
@@ -61,86 +62,89 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-white text-slate-800 p-6">
-      <ContextMenu>
-        <ContextMenuItem onClick={handleEdit}>Edit</ContextMenuItem>
-        <ContextMenuItem onClick={handleDelete} disabled>
-          Delete
-        </ContextMenuItem>
-        <ContextMenuDivider />
-        <ContextMenuItem onClick={handleShare}>Share</ContextMenuItem>
-      </ContextMenu>
-      <h1 className="text-lg font-bold">
-        CEO Summary and Key Opening Metrics (Q4 2025)
-      </h1>
-      <p>
-        High level summary of the Q4 2025 Performance with a snapshot of our key
-        components
-      </p>
-      <TopBarForm />
-      <div className="grid grid-cols-1 md:grid-cols-2 mt-4 gap-2">
-        <Card>
-          <div className="w-full justify-between flex items-baseline">
-            <div className="font-bold mb-4">User Based Queries #4</div>
-            <Button
-              onClick={handleOpenDialog}
-              className="bg-black p-2 text-white rounded-lg text-xs"
-            >
-              Open a dialog
-            </Button>
-          </div>
-          <DataGrid
-            dataSource={data}
-            columns={columns}
-            pageSettings={{ pageNumber: 2 }}
-            enableSearch={true}
-            enableExcelExport={true}
-            excelName="User_Data"
-            enablePdfExport={true}
-            pdfName="User_Data"
-          />
-        </Card>
-        <Card>
-          <div className="w-full justify-between flex items-baseline">
-            <div className="font-bold mb-4">Revenue each Quarter</div>
-            <Button
-              onClick={showCustomToast}
-              className="bg-black p-2 text-white rounded-lg text-xs"
-            >
-              Show a Toast
-            </Button>
-          </div>
-          <MultiSelect
-            placeholder="Select Multiselect Items"
-            items={items}
-            showSearch={false}
-          />
-
-          <div className="mt-4">
-            <h3>This is How Loading Content Shows with Skeleton Component</h3>
-            <div className="flex flex-col items-center gap-4 mt-4">
-              <Skeleton type="circle" height={50} width={50} />
-              <Skeleton type="text" lines={3} width="80%" />
+    <div className="min-h-screen flex bg-white text-slate-800">
+      <Sidebar />
+      <div className="w-full p-6">
+        <ContextMenu>
+          <ContextMenuItem onClick={handleEdit}>Edit</ContextMenuItem>
+          <ContextMenuItem onClick={handleDelete} disabled>
+            Delete
+          </ContextMenuItem>
+          <ContextMenuDivider />
+          <ContextMenuItem onClick={handleShare}>Share</ContextMenuItem>
+        </ContextMenu>
+        <h1 className="text-lg font-bold">
+          CEO Summary and Key Opening Metrics (Q4 2025)
+        </h1>
+        <p>
+          High level summary of the Q4 2025 Performance with a snapshot of our
+          key components
+        </p>
+        <TopBarForm />
+        <div className="grid grid-cols-1 md:grid-cols-2 mt-4 gap-2">
+          <Card>
+            <div className="w-full justify-between flex items-baseline">
+              <div className="font-bold mb-4">User Based Queries #4</div>
+              <Button
+                onClick={handleOpenDialog}
+                className="bg-black p-2 text-white rounded-lg text-xs"
+              >
+                Open a dialog
+              </Button>
             </div>
-          </div>
-        </Card>
+            <DataGrid
+              dataSource={data}
+              columns={columns}
+              pageSettings={{ pageNumber: 2 }}
+              enableSearch={true}
+              enableExcelExport={true}
+              excelName="User_Data"
+              enablePdfExport={true}
+              pdfName="User_Data"
+            />
+          </Card>
+          <Card>
+            <div className="w-full justify-between flex items-baseline">
+              <div className="font-bold mb-4">Revenue each Quarter</div>
+              <Button
+                onClick={showCustomToast}
+                className="bg-black p-2 text-white rounded-lg text-xs"
+              >
+                Show a Toast
+              </Button>
+            </div>
+            <MultiSelect
+              placeholder="Select Multiselect Items"
+              items={items}
+              showSearch={false}
+            />
+
+            <div className="mt-4">
+              <h3>This is How Loading Content Shows with Skeleton Component</h3>
+              <div className="flex flex-col items-center gap-4 mt-4">
+                <Skeleton type="circle" height={50} width={50} />
+                <Skeleton type="text" lines={3} width="80%" />
+              </div>
+            </div>
+          </Card>
+        </div>
+        <p className="mt-4">
+          Right Click on the screen for open context menu component
+        </p>
+
+        <p className="flex items-center mt-4 gap-2">
+          I Agree To Whatever You Say, Take my Money <Checkbox />
+        </p>
+
+        <Dialog
+          showDialog={showDialog}
+          dialogMessage="Do you want to proceed with this action?"
+          dialogActionOne="Yes"
+          dialogActionTwo="No"
+          onDialogActionOneClick={handleActionOne}
+          onDialogActionTwoClick={handleActionOne}
+        />
       </div>
-      <p className="mt-4">
-        Right Click on the screen for open context menu component
-      </p>
-
-      <p className="flex items-center mt-4 gap-2">
-        I Agree To Whatever You Say, Take my Money <Checkbox />
-      </p>
-
-      <Dialog
-        showDialog={showDialog}
-        dialogMessage="Do you want to proceed with this action?"
-        dialogActionOne="Yes"
-        dialogActionTwo="No"
-        onDialogActionOneClick={handleActionOne}
-        onDialogActionTwoClick={handleActionOne}
-      />
     </div>
   );
 }
