@@ -67,7 +67,7 @@ export default function page() {
         </div>
       </section>
 
-      <section className="grid grid-cols-1 md:grid-cols-2 mt-4 space-x-4 space-y-2">
+      <section className="grid grid-cols-1 md:grid-cols-2 mt-4 gap-4 space-y-2">
         <Card>
           <div className="flex flex-col gap-2">
             <div className="flex justify-between items-center">
