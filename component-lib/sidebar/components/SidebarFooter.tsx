@@ -1,7 +1,7 @@
 import { MenuItem, IconComponent } from "../type";
 
 type SidebarFooterProps = {
-  footerItems: MenuItem[];
+  footerItems?: MenuItem[];
   iconMap: Record<string, IconComponent>;
   toggleProMode: () => void;
 };
@@ -11,10 +11,12 @@ export const SidebarFooter = ({
   iconMap,
   toggleProMode,
 }: SidebarFooterProps) => {
+  if (!footerItems) return null;
+
   return (
     <div className="border-t border-gray-200">
       <ul className="px-4 py-2 space-y-1">
-        {footerItems.map((item) => {
+        {footerItems?.map((item) => {
           const IconComponent = iconMap[item.icon] || (() => null);
 
           if (item.toggle) {
@@ -52,7 +54,7 @@ export const SidebarFooter = ({
                 <span className="mr-3">
                   <IconComponent />
                 </span>
-                <span>{item.name}</span>
+                <span>{item?.name}</span>
               </a>
             </li>
           );

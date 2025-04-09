@@ -1,8 +1,9 @@
-import { IconComponent, MenuData } from "@/component-lib/sidebar/type";
+import { Sidebar } from "@/component-lib/sidebar";
+import { IconComponent } from "@/component-lib/sidebar/type";
+import { initialMenuData } from "@/utils/sidebar";
 import React from "react";
 
 export default function SideBarWrapper() {
-  // Example icons - replace with your actual icon components
   const DashboardIcon: IconComponent = () => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -158,67 +159,5 @@ export default function SideBarWrapper() {
     pro: ProIcon,
   };
 
-  // Sample menu data - this can be passed as a prop
-  const initialMenuData: MenuData = {
-    logo: {
-      name: "Sequence",
-      logoUrl: "/file.svg", // Replace with your actual logo path
-    },
-    sections: [
-      {
-        title: "GENERAL",
-        items: [
-          {
-            id: 1,
-            name: "Dashboard",
-            icon: "dashboard",
-            path: "/dashboard",
-            active: true,
-          },
-          { id: 2, name: "Payment", icon: "payment", path: "/payment" },
-          {
-            id: 3,
-            name: "Transaction",
-            icon: "transaction",
-            path: "/transaction",
-          },
-          {
-            id: 4,
-            name: "Cards",
-            icon: "cards",
-            path: "/cards",
-            expandable: true,
-            expanded: false,
-          },
-        ],
-      },
-      {
-        title: "SUPPORT",
-        items: [
-          { id: 5, name: "Capital", icon: "capital", path: "/capital" },
-          { id: 6, name: "Vaults", icon: "vaults", path: "/vaults" },
-          { id: 7, name: "Reports", icon: "reports", path: "/reports" },
-          { id: 8, name: "Earn", icon: "earn", path: "/earn", badge: "150" },
-        ],
-      },
-    ],
-    footer: [
-      { id: 9, name: "Settings", icon: "settings", path: "/settings" },
-      { id: 10, name: "Help", icon: "help", path: "/help" },
-      {
-        id: 11,
-        name: "Pro Mode",
-        icon: "pro",
-        path: "/pro",
-        toggle: true,
-        active: true,
-      },
-    ],
-    profile: {
-      name: "Young Alaska",
-      email: "young@alaskan.com",
-      avatarUrl: "/avatar.jpg", // Replace with your actual avatar path
-    },
-  };
-  return <div>SideBarWrapper</div>;
+  return <Sidebar menuData={initialMenuData} iconMap={iconMap} />;
 }

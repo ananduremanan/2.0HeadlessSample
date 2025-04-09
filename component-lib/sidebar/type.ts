@@ -18,13 +18,13 @@ export type MenuSection = {
 };
 
 export type MenuData = {
-  logo: {
+  logo?: {
     name: string;
     logoUrl: string;
   };
-  sections: MenuSection[];
-  footer: MenuItem[];
-  profile: {
+  sections?: MenuSection[];
+  footer?: MenuItem[];
+  profile?: {
     name: string;
     email: string;
     avatarUrl: string;
