@@ -21,7 +21,7 @@ export default function page() {
         <div className="w-96">
           <Input placeholder="search" type="search" />
         </div>
-        <div className="flex space-x-2 w-96">
+        <div className="space-x-2 w-96 hidden md:flex">
           <DatePicker />
           <Button className="bg-black p-1.5 text-white rounded-lg flex items-center gap-2 text-sm px-4">
             <Icon
@@ -34,7 +34,7 @@ export default function page() {
         </div>
       </section>
 
-      <section className="w-full bg-zinc-100 p-6 rounded-lg mt-4 text-black flex justify-between bg-[image:repeating-linear-gradient(315deg,_var(--pattern-fg)_0,_var(--pattern-fg)_1px,_transparent_0,_transparent_50%)] bg-[size:10px_10px] bg-fixed [--pattern-fg:var(--color-black)]/5">
+      <section className="w-full bg-zinc-100 p-6 rounded-lg mt-4 text-black flex flex-col md:flex-row justify-between bg-[image:repeating-linear-gradient(315deg,_var(--pattern-fg)_0,_var(--pattern-fg)_1px,_transparent_0,_transparent_50%)] bg-[size:10px_10px] bg-fixed [--pattern-fg:var(--color-black)]/5">
         <div className="flex flex-col">
           <div>Total Balance Pending</div>
           <div className="text-2xl font-bold">567 Projects</div>
@@ -67,7 +67,7 @@ export default function page() {
         </div>
       </section>
 
-      <section className="grid grid-cols-2 mt-4 space-x-4">
+      <section className="grid grid-cols-1 md:grid-cols-2 mt-4 space-x-4 space-y-2">
         <Card>
           <div className="flex flex-col gap-2">
             <div className="flex justify-between items-center">
