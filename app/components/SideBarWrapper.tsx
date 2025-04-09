@@ -1,3 +1,5 @@
+"use client";
+
 import { Sidebar } from "@/component-lib/sidebar";
 import { IconComponent } from "@/component-lib/sidebar/type";
 import { initialMenuData } from "@/utils/sidebar";

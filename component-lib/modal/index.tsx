@@ -13,12 +13,12 @@ import { ModalProps } from "./types";
 
 const defaultClasses = {
   modal:
-    "fixed z-10 overflow-y-auto inset-0 flex items-center justify-center bg-[#2b2426bd]",
+    "fixed z-50 overflow-y-auto inset-0 flex items-center justify-center bg-[#2b2426bd]",
   modalContent: "bg-white m-10 md:w-[80vh] rounded-xl relative",
   modalTitle:
     "p-4 text-lg leading-6 font-medium text-gray-900 flex justify-between items-center",
   closeButton:
-    "p-2 hover:bg-gray-100 rounded-full transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-gray-300",
+    "absolute top-2 right-2 p-2 hover:bg-gray-100 rounded-full transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-gray-300",
   closeIcon: "h-5 w-5 stroke-gray-500 fill-none",
 };
 
@@ -38,6 +38,7 @@ export const Modal = memo(
     titleId = "modal-title",
     closeButtonContent,
     animationDuration = 200,
+    showTitle = true,
   }: ModalProps) => {
     const modalRef = useRef<HTMLDivElement>(null);
     const previousActiveElement = useRef<HTMLElement | null>(null);
@@ -114,7 +115,7 @@ export const Modal = memo(
           tabIndex={-1}
         >
           <div className={twMerge(modalTitleClass, classModalTitle)}>
-            <h2 id={titleId}>{modalTitle}</h2>
+            {showTitle && <h2 id={titleId}>{modalTitle}</h2>}
             {showCloseButton && (
               <button
                 onClick={handleClose}
@@ -128,7 +129,7 @@ export const Modal = memo(
               </button>
             )}
           </div>
-          <hr className="border-gray-200" />
+          {showTitle && <hr className="border-gray-200" />}
           <div className="p-4">{children}</div>
         </div>
       </div>
@@ -137,5 +138,3 @@ export const Modal = memo(
 );
 
 Modal.displayName = "Modal";
-
-export default Modal;

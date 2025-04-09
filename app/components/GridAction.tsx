@@ -1,6 +1,6 @@
 "use client";
 import { Button } from "@/component-lib/button";
-import Modal from "@/component-lib/modal";
+import { Modal } from "@/component-lib/modal";
 import { FileUploader } from "@/component-lib/uploader";
 import React, { useState } from "react";
 

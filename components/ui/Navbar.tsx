@@ -3,7 +3,7 @@
 import Navbar from "@/component-lib/navbar";
 import React from "react";
 
-export default function NavbarWrapper() {
+export default function NavbarWrapper({ showLogin }: any) {
   return (
     <Navbar
       brand={{
@@ -34,6 +34,9 @@ export default function NavbarWrapper() {
       ]}
       showSearchBar={true}
       showAuthButtons={true}
+      onLogin={() => {
+        if (showLogin) showLogin(true);
+      }}
     />
   );
 }

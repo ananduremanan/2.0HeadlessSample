@@ -9,9 +9,9 @@ interface ToastProps {
 
 const bgColors = {
   default: "bg-white hover:bg-gray-50",
-  success: "bg-green-50 hover:bg-green-100",
-  error: "bg-red-50 hover:bg-red-100",
-  warning: "bg-yellow-50 hover:bg-yellow-100",
+  success: "bg-white hover:bg-green-100",
+  error: "bg-white hover:bg-red-100",
+  warning: "bg-white hover:bg-yellow-100",
 } as const;
 
 const toastAnimation = {
@@ -74,12 +74,12 @@ export function ToastComponent({ toast }: ToastProps) {
         ${toastAnimation[toast.type || "default"]}
         transform transition-all duration-300 ease-in-out
         pointer-events-auto relative flex w-full items-center justify-between
-        overflow-hidden rounded-full border px-4 py-3 shadow-lg
+        overflow-hidden rounded-lg border px-4 py-3 shadow-lg
       `}
       role="alert"
     >
       <div className="flex items-start gap-3 w-full">
-        <ToastIcon type={toast.type} />
+        {/* <ToastIcon type={toast.type} /> */}
         <div className="flex-1">
           {toast.title && (
             <div className="font-medium text-sm text-gray-900">
