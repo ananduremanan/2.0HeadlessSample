@@ -12,6 +12,7 @@ export const SidebarFooter = ({
   toggleProMode,
 }: SidebarFooterProps) => {
   if (!footerItems) return null;
+  if (!iconMap) return null;
 
   return (
     <div className="border-t border-gray-200">
