@@ -218,7 +218,7 @@ export const FileUploader = ({
   };
 
   return (
-    <div className="w-full max-w-md mx-auto">
+    <div className="w-full">
       <div
         ref={dropZoneRef}
         className={`flex flex-col items-center border-2 border-dashed rounded-lg p-4 text-center cursor-pointer transition-colors ${

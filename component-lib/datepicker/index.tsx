@@ -122,7 +122,7 @@ export const DatePicker = ({
 
   const clearSelectedHandler = () => {
     clearSelected();
-    if( onDateChange) onDateChange(null);
+    if (onDateChange) onDateChange(null);
   };
 
   return (

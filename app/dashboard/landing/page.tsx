@@ -116,7 +116,7 @@ export default function page() {
           <DataGrid
             dataSource={data}
             columns={columns}
-            pageSettings={{ pageNumber: 10 }}
+            pageSettings={{ pageNumber: 6 }}
             enableSearch={true}
             enableExcelExport={true}
             excelName="User_Data"

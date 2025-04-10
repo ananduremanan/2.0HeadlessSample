@@ -8,7 +8,11 @@ import {
   rightArrows,
 } from "../../icon/iconPaths";
 
-const Pagination = () => {
+interface PaginationProps {
+  showPagination: boolean | undefined;
+}
+
+const Pagination = ({ showPagination }: PaginationProps) => {
   const {
     currentPage,
     pageStart,
@@ -21,6 +25,8 @@ const Pagination = () => {
     goToEndPage,
     workingDataSource,
   } = useGridPagination();
+
+  if (!showPagination) return null;
 
   return (
     <div className="flex flex-wrap justify-between items-center text-xs px-2 py-4 bg-zinc-100 gap-2 md:gap-4">

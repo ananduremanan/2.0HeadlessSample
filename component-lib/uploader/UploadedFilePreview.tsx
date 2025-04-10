@@ -64,7 +64,7 @@ export default function UploadedFilePreview({
                 <Icon
                   dimensions={{ width: "16", height: "16" }}
                   elements={x}
-                  svgClass={"stroke-red-500 fill-none dark:stroke-white"}
+                  svgClass={"stroke-red-500 fill-none"}
                 />
               </button>
             </div>

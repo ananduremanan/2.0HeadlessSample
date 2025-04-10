@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import React, { forwardRef, useImperativeHandle } from "react";
 import type { GridProps } from "../type";
 import Pagination from "./GridPagination";
@@ -27,6 +27,7 @@ const GridContent = forwardRef((_, ref) => {
     prevPage,
     goToFirstPage,
     goToEndPage,
+    showPagination,
   } = useGridContext();
 
   // Making Grid Functions Accessible in Parent
@@ -60,7 +61,7 @@ const GridContent = forwardRef((_, ref) => {
     <div className={gridContainerClass}>
       <GridToolbar />
       <GridBody />
-      <Pagination />
+      <Pagination showPagination={showPagination} />
     </div>
   );
 });

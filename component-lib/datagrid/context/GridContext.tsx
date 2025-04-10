@@ -24,6 +24,7 @@ interface GridContextType {
   activeFilterArray: any[];
   selectedRows: any[];
   isFetching: boolean | undefined;
+  showPagination?: boolean;
 
   // Navigation methods
   nextPage: () => void;
@@ -92,6 +93,7 @@ export const GridProvider: React.FC<{
     gridColumnStyle = "p-2 text-xs",
     rowChange = () => {},
     pageStatus = () => {},
+    showPagination = true,
   } = props;
 
   // States Handling Grid
@@ -402,6 +404,7 @@ export const GridProvider: React.FC<{
     gridColumnStyleSelectAll,
     gridColumnStyle,
     rowChange,
+    showPagination,
   };
 
   return (

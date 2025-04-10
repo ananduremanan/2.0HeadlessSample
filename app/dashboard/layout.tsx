@@ -18,7 +18,7 @@ export default function DashBoardLayout({
     <div className="min-h-screen flex overflow-hidden">
       {isLandingPage && <SideBarWrapper />}
       <Suspense>
-        <div className="flex-1 overflow-x-auto">{children}</div>
+        <div className="flex-1 overflow-x-auto max-h-screen">{children}</div>
       </Suspense>
     </div>
   );

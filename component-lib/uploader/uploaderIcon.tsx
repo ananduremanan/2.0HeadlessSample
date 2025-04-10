@@ -27,7 +27,7 @@ export const GetFileIcon = ({ file, showImagePreview, previewUrls }: any) => {
       <Icon
         dimensions={{ width: "26", height: "26" }}
         elements={fileimage}
-        svgClass={"stroke-blue-500 fill-none dark:stroke-white"}
+        svgClass={"stroke-blue-500 fill-none"}
       />
     );
   if (file.type === "application/pdf" || file.type.includes("pdf"))
@@ -35,7 +35,7 @@ export const GetFileIcon = ({ file, showImagePreview, previewUrls }: any) => {
       <Icon
         dimensions={{ width: "26", height: "26" }}
         elements={filetext}
-        svgClass={"stroke-red-500 fill-none dark:stroke-white"}
+        svgClass={"stroke-red-500 fill-none"}
       />
     );
   if (file.type.includes("spreadsheet") || file.type.includes("excel"))
@@ -43,7 +43,7 @@ export const GetFileIcon = ({ file, showImagePreview, previewUrls }: any) => {
       <Icon
         dimensions={{ width: "26", height: "26" }}
         elements={filespreadsheet}
-        svgClass={"stroke-green-500 fill-none dark:stroke-white"}
+        svgClass={"stroke-green-500 fill-none"}
       />
     );
   if (file.type.startsWith("video/"))
@@ -51,7 +51,7 @@ export const GetFileIcon = ({ file, showImagePreview, previewUrls }: any) => {
       <Icon
         dimensions={{ width: "26", height: "26" }}
         elements={film}
-        svgClass={"stroke-purple-500 fill-none dark:stroke-white"}
+        svgClass={"stroke-purple-500 fill-none"}
       />
     );
   if (file.type.startsWith("audio/"))
@@ -59,14 +59,14 @@ export const GetFileIcon = ({ file, showImagePreview, previewUrls }: any) => {
       <Icon
         dimensions={{ width: "26", height: "26" }}
         elements={music}
-        svgClass={"stroke-yellow-500 fill-none dark:stroke-white"}
+        svgClass={"stroke-yellow-500 fill-none"}
       />
     );
   return (
     <Icon
       dimensions={{ width: "16", height: "16" }}
       elements={filetext}
-      svgClass={"stroke-red-500 fill-none dark:stroke-white"}
+      svgClass={"stroke-red-500 fill-none"}
     />
   );
 };
