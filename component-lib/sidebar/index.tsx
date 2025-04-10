@@ -9,7 +9,7 @@ export function Sidebar({ menuData, iconMap }: SidebarProps) {
   const { sidebarData, toggleItem, toggleProMode } = useSidebarState(menuData);
 
   return (
-    <div className="hidden md:flex flex-col h-screen bg-white w-64 border-r border-gray-200">
+    <div className="hidden md:flex flex-col h-screen bg-white w-64 border-r border-gray-200 sticky left-0 top-0">
       <SidebarLogo logo={sidebarData.logo} />
       <SidebarMenu
         sections={sidebarData.sections}

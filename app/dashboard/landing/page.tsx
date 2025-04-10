@@ -1,4 +1,5 @@
 "use client";
+import { Breadcrumb } from "@/component-lib/breadcrumb";
 import { Button } from "@/component-lib/button";
 import { Card } from "@/component-lib/card";
 import { DataGrid } from "@/component-lib/datagrid";
