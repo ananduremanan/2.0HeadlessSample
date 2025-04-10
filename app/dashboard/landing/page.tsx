@@ -144,7 +144,7 @@ export default function page() {
         modalTitle="Form Renderer Sample"
         modalContentClass="bg-white rounded-lg shadow-lg"
         showCloseButton={false}
-        dismissible={false}
+        dismissible={true}
       >
         <div className="text-xs">
           Content of this Form is Generated With AI and Dynamically Rendered
