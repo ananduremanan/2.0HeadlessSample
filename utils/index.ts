@@ -1,4 +1,5 @@
 import GridAction from "@/app/components/GridAction";
+import { FormItem } from "@/component-lib/formrenderer/types";
 
 export const items = [
   { value: "apple", label: "Apple" },
@@ -34,5 +35,69 @@ export const columns = [
     headerText: "Action",
     width: 150,
     template: GridAction,
+  },
+];
+
+export const sourceData: FormItem[] = [
+  {
+    id: "company-name-input-abc123",
+    component: "input",
+    name: "company-name",
+    label: "Company Name",
+    type: "text",
+    placeholder: "Enter company name",
+    required: true,
+  },
+  {
+    id: "industry-select-def456",
+    component: "select",
+    name: "industry",
+    label: "Industry",
+    options: [
+      {
+        value: "tech",
+        label: "Technology",
+      },
+      {
+        value: "healthcare",
+        label: "Healthcare",
+      },
+      {
+        value: "finance",
+        label: "Finance",
+      },
+    ],
+    required: true,
+  },
+  {
+    id: "founded-date-datepicker-ghi789",
+    component: "datepicker",
+    name: "founded-date",
+    label: "Founded Date",
+    required: true,
+  },
+  {
+    id: "terms-checkbox-jkl012",
+    component: "checkbox",
+    name: "terms-checkbox",
+    label: "I agree to the terms",
+    required: "exp:${company-name-input-abc123.value !== ''}$",
+  },
+  {
+    id: "num-employees-input-mno345",
+    component: "input",
+    name: "num-employees",
+    label: "Number of Employees",
+    type: "number",
+    placeholder: "Enter number of employees",
+    required: "exp:${terms-checkbox-jkl012.value === true}$",
+    disabled: "exp:${terms-checkbox-jkl012.value === false}$",
+  },
+  {
+    id: "button-1744268846765",
+    component: "button",
+    button_type: "submit",
+    value: "Submit",
+    required: false,
   },
 ];

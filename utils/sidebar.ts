@@ -51,7 +51,7 @@ export const initialMenuData: MenuData = {
   ],
   footer: [
     { id: 9, name: "Settings", icon: "settings", path: "/settings" },
-    { id: 10, name: "Help", icon: "help", path: "/help" },
+    { id: 10, name: "Logout", icon: "help", path: "/dashboard" },
     {
       id: 11,
       name: "Pro Mode",
