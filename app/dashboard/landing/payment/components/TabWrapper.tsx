@@ -36,7 +36,7 @@ export default function TabsWrapper() {
         <div className="bg-white rounded-lg p-4 shadow-lg border">
           <div className="flex items-center gap-3">
             <Image
-              src={"/girl.jfif"}
+              src={"/anya.png"}
               width={60}
               height={60}
               alt="girl"
@@ -45,7 +45,7 @@ export default function TabsWrapper() {
             <div>
               <h4 className="font-semibold text-black">New Message</h4>
               <p className="text-sm text-gray-500">
-                You have a new message from John, This is a Custom Toast with
+                You have a new message from Anya, This is a Custom Toast with
                 JSX renderd Inside.
               </p>
             </div>
