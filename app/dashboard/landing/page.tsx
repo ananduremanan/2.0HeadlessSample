@@ -17,6 +17,8 @@ import { columns, data, sourceData } from "@/utils";
 import Link from "next/link";
 import React, { useState } from "react";
 import { useColorContext } from "@/app/context/ColorContext";
+import BarGraphDisplay from "@/components/BarGraph";
+import { Select } from "@/component-lib/select";
 // import { randomColorGenerator } from "./helperFunction";
 
 export default function page() {
@@ -103,8 +105,80 @@ export default function page() {
               svgClass="stroke-white"
               dimensions={{ width: "16", height: "16" }}
             />
-            Random Color
+            Random
           </Button>
+        </div>
+      </section>
+
+      <section className="grid grid-cols-1 md:grid-cols-2 space-x-2">
+        <BarGraphDisplay />
+        <div className="border border-gray-100 rounded-xl p-4 mt-2">
+          <div className="text-sm font-bold">Share This Document</div>
+          <div className="text-xs text-gray-400">
+            Anyone with the link can view this document.
+          </div>
+          <div className="flex w-full justify-between gap-2 mt-4">
+            <Input
+              value={"example.com/grampro/give-access?value=true"}
+              onChange={() => {
+                console.log("nothing");
+              }}
+            />
+            <Button>Copy</Button>
+          </div>
+
+          <div>
+            <div className="text-sm mt-4">People with access</div>
+            {[
+              {
+                employeeName: "Sahail Samshudhin",
+                email: "sahail@gramproindia.com",
+                access: "edit",
+              },
+              {
+                employeeName: "Nalini Ramakrsihnan",
+                email: "nalini@gramproindia.com",
+                access: "view",
+              },
+              {
+                employeeName: "Sree Devi",
+                email: "sreedevi@gramproindia.com",
+                access: "view",
+              },
+            ].map(({ employeeName, email, access }: any, index: number) => {
+              return (
+                <div
+                  className="mt-4 flex justify-between items-center"
+                  key={index}
+                >
+                  <div className="flex gap-2">
+                    <div className="hidden md:flex w-12 h-12 bg-black text-white rounded-full  justify-center items-center">
+                      {employeeName.slice(0, 1)}
+                    </div>
+                    <div>
+                      <div className="font-bold">{employeeName}</div>
+                      <div className="text-sm text-gray-400">{email}</div>
+                    </div>
+                  </div>
+
+                  <div className="w-32">
+                    <Select
+                      showRemoveButton={false}
+                      showSearch={false}
+                      items={
+                        new Array(
+                          { label: "Can Edit", value: "edit" },
+                          { label: "Can View", value: "view" },
+                          { label: "Can Delete", value: "delete" }
+                        )
+                      }
+                      selectedItem={access}
+                    />
+                  </div>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </section>
 

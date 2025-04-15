@@ -9,6 +9,9 @@ function BarGraphDisplay() {
     { label: "May", value: 90 },
     { label: "June", value: 67 },
     { label: "July", value: 54 },
+    { label: "Aug", value: 45 },
+    { label: "Sept", value: 54 },
+    { label: "Nov", value: 32 },
   ];
 
   return (

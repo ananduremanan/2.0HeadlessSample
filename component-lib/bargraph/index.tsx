@@ -1,17 +1,6 @@
 import React from "react";
 import { useState } from "react";
-
-type BarData = {
-  label: string;
-  value: number;
-};
-
-type BarChartProps = {
-  data: BarData[];
-  height?: number;
-  title?: string;
-  showXValue?: boolean;
-};
+import { BarChartProps } from "./type";
 
 export const BarChart: React.FC<BarChartProps> = ({
   data,

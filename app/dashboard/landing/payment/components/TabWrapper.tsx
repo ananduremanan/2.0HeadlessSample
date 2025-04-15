@@ -1,3 +1,4 @@
+import { BarChart } from "@/component-lib/bargraph";
 import { Button } from "@/component-lib/button";
 import { DataGrid } from "@/component-lib/datagrid";
 import { Dialog } from "@/component-lib/dialog";
@@ -14,6 +15,15 @@ export default function TabsWrapper() {
     { id: "transaction", label: "Transaction" },
     { id: "day-sale", label: "Day Sale" },
     // { id: "inactive", label: "Inactive Tab", disabled: true },
+  ];
+
+  const sampleData = [
+    { label: "Jan", value: 40 },
+    { label: "Feb", value: 55 },
+    { label: "Mar", value: 75 },
+    { label: "Apr", value: 20 },
+    { label: "May", value: 90 },
+    { label: "June", value: 67 },
   ];
 
   const { toast } = useToast();
@@ -88,7 +98,7 @@ export default function TabsWrapper() {
           <div>
             <div>
               <div>Experimental Bar Graph</div>
-              <BarGraphDisplay />
+              <BarChart data={sampleData} title="Monthly Sales Performance" />
             </div>
           </div>
         );

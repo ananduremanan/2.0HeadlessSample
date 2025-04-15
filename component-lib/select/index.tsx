@@ -39,6 +39,7 @@ const Select = forwardRef<SelectHandle, SelectProps>((props, ref) => {
     error = undefined,
     onFiltering,
     disabled = false,
+    showRemoveButton = true,
   } = props;
 
   applyScrollbarStyles();
@@ -129,9 +130,11 @@ const Select = forwardRef<SelectHandle, SelectProps>((props, ref) => {
     >
       <div className="w-full relative">
         <button
-          className={`${error ? primary["error-border"] : "border border-gray-300"} ${
-            selectStyle["select-button"]
-          } ${disabled ? "opacity-50 cursor-not-allowed" : ""}`}
+          className={`${
+            error ? primary["error-border"] : "border border-gray-300"
+          } ${selectStyle["select-button"]} ${
+            disabled ? "opacity-50 cursor-not-allowed" : ""
+          }`}
           onClick={togglePopover}
           type="button"
           disabled={disabled}
@@ -144,7 +147,7 @@ const Select = forwardRef<SelectHandle, SelectProps>((props, ref) => {
             }`}
           />
         </button>
-        {selectedDisplay && !disabled && (
+        {selectedDisplay && !disabled && showRemoveButton && (
           <button
             className={selectStyle["selectedDisplay-Button"]}
             onClick={handleClear}
