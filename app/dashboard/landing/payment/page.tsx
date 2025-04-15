@@ -17,6 +17,7 @@ export default function Payment() {
         <section>
           <Breadcrumb />
           <div className="text-2xl font-bold mt-4">Overview</div>
+          <div className="text-xs text-gray-400">You can see the breadcrumb above auto Generated with breadcrumb component</div>
 
           <section className="grid grid-cols-1 md:grid-cols-2 mt-4 gap-4 space-y-2">
             <Card>
