@@ -7,7 +7,7 @@ import Icon from "@/component-lib/icon/Icon";
 import { info } from "@/component-lib/icon/iconPaths";
 import { columns, data } from "@/utils";
 
-import React, { useState } from "react";
+import React from "react";
 import TabsWrapper from "./components/TabWrapper";
 
 export default function Payment() {

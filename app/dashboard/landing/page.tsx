@@ -118,12 +118,14 @@ export default function page() {
             Anyone with the link can view this document.
           </div>
           <div className="flex w-full justify-between gap-2 mt-4">
-            <Input
-              value={"example.com/grampro/give-access?value=true"}
-              onChange={() => {
-                console.log("nothing");
-              }}
-            />
+            <div className="flex-1">
+              <Input
+                value={"example.com/grampro/give-access?value=true"}
+                onChange={() => {
+                  console.log("nothing");
+                }}
+              />
+            </div>
             <Button>Copy</Button>
           </div>
 

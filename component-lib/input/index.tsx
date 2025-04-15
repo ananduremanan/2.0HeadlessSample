@@ -81,7 +81,7 @@ export const Input = ({
   };
 
   return (
-    <div className="w-full">
+    <div className="">
       {!OTPField ? (
         <div className="text-input-container w-full relative flex flex-col">
           <div className="relative">
