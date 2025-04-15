@@ -3,6 +3,7 @@ import { DataGrid } from "@/component-lib/datagrid";
 import { Dialog } from "@/component-lib/dialog";
 import { TabItem, Tabs } from "@/component-lib/tabs";
 import { useToast } from "@/component-lib/toast/useToast";
+import BarGraphDisplay from "@/components/BarGraph";
 import { columns, fakeData } from "@/utils";
 import Image from "next/image";
 import React, { useState } from "react";
@@ -83,7 +84,14 @@ export default function TabsWrapper() {
           </div>
         );
       case "transaction":
-        return <div>Transaction content goes here...</div>;
+        return (
+          <div>
+            <div>
+              <div>Experimental Bar Graph</div>
+              <BarGraphDisplay />
+            </div>
+          </div>
+        );
       case "day-sale":
         return <div>Day Sale content goes here...</div>;
       default:
