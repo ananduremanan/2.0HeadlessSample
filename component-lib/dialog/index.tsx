@@ -26,7 +26,7 @@ export const Dialog = ({
     <div
       className={twMerge(
         dialogClass,
-        "fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+        "fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 animate-jump"
       )}
       role="dialog"
       aria-modal="true"

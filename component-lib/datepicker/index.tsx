@@ -15,7 +15,7 @@ import {
   applyScrollbarStyles,
 } from "@grampro/headless-helpers";
 import Icon from "../icon/Icon";
-import { calender, down, leftArrows, rightArrows, x } from "../icon/iconPaths";
+import { calender, down, leftArrow, rightArrow, x } from "../icon/iconPaths";
 import type { DatePickerProps } from "./types";
 import { iconClass, popUp, primary } from "../globalStyle";
 
@@ -171,33 +171,6 @@ export const DatePicker = ({
       {showDatepicker && !disabled && (
         <div className={popUp["pop-up-style"]}>
           <div className="flex justify-between items-center p-2">
-            <button
-              type="button"
-              onClick={prevMonth}
-              disabled={isAtYearLimit(
-                "prev",
-                currentMonth,
-                currentYear,
-                yearLimitStart,
-                yearLimitEnd
-              )}
-              className={`text-gray-500 hover:text-gray-700 w-8 h-8 rounded-full flex items-center justify-center hover:bg-gray-100 ${
-                isAtYearLimit(
-                  "prev",
-                  currentMonth,
-                  currentYear,
-                  yearLimitStart,
-                  yearLimitEnd
-                )
-                  ? "opacity-50"
-                  : ""
-              }`}
-            >
-              <Icon
-                elements={leftArrows}
-                svgClass={"stroke-black fill-none dark:stroke-white"}
-              />
-            </button>
             <div className="flex items-center space-x-2">
               <span className="text-md font-semibold">
                 {new Date(currentYear, currentMonth).toLocaleString("default", {
@@ -212,37 +185,71 @@ export const DatePicker = ({
               >
                 <Icon
                   elements={down}
-                  svgClass={"stroke-black fill-none dark:stroke-white"}
+                  svgClass={"stroke-black fill-none"}
+                  dimensions={{ width: "16", height: "16" }}
                 />
               </button>
             </div>
-            <button
-              type="button"
-              onClick={nextMonth}
-              disabled={isAtYearLimit(
-                "next",
-                currentMonth,
-                currentYear,
-                yearLimitStart,
-                yearLimitEnd
-              )}
-              className={`text-gray-500 hover:text-gray-700 w-8 h-8 rounded-full flex items-center justify-center hover:bg-gray-100 ${
-                isAtYearLimit(
+
+            <div className="flex items-center space-x-2">
+              <button
+                type="button"
+                onClick={prevMonth}
+                disabled={isAtYearLimit(
+                  "prev",
+                  currentMonth,
+                  currentYear,
+                  yearLimitStart,
+                  yearLimitEnd
+                )}
+                className={`text-gray-500 hover:text-gray-700 w-8 h-8 rounded-full flex items-center justify-center hover:bg-gray-100 ${
+                  isAtYearLimit(
+                    "prev",
+                    currentMonth,
+                    currentYear,
+                    yearLimitStart,
+                    yearLimitEnd
+                  )
+                    ? "opacity-50"
+                    : ""
+                }`}
+              >
+                <Icon
+                  elements={leftArrow}
+                  svgClass={"stroke-black fill-none"}
+                  dimensions={{ width: "16", height: "16" }}
+                />
+              </button>
+
+              <button
+                type="button"
+                onClick={nextMonth}
+                disabled={isAtYearLimit(
                   "next",
                   currentMonth,
                   currentYear,
                   yearLimitStart,
                   yearLimitEnd
-                )
-                  ? "opacity-50"
-                  : ""
-              }`}
-            >
-              <Icon
-                elements={rightArrows}
-                svgClass={"stroke-black fill-none dark:stroke-white"}
-              />
-            </button>
+                )}
+                className={`text-gray-500 hover:text-gray-700 w-8 h-8 rounded-full flex items-center justify-center hover:bg-gray-100 ${
+                  isAtYearLimit(
+                    "next",
+                    currentMonth,
+                    currentYear,
+                    yearLimitStart,
+                    yearLimitEnd
+                  )
+                    ? "opacity-50"
+                    : ""
+                }`}
+              >
+                <Icon
+                  elements={rightArrow}
+                  svgClass={"stroke-black fill-none"}
+                  dimensions={{ width: "16", height: "16" }}
+                />
+              </button>
+            </div>
           </div>
           {showYearMonthPicker ? (
             <div className="flex p-2 h-[224px] scrollbar">
@@ -288,7 +295,10 @@ export const DatePicker = ({
           ) : (
             <div className="grid grid-cols-7 gap-1 p-2">
               {["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"].map((day) => (
-                <div key={day} className="text-center font-bold text-sm p-1">
+                <div
+                  key={day}
+                  className="text-center font-medium text-gray-400 text-sm p-1"
+                >
                   {day}
                 </div>
               ))}
@@ -329,7 +339,7 @@ export const DatePicker = ({
               })}
             </div>
           )}
-          <div className="px-2 py-2 flex justify-between mb-8">
+          <div className="px-2 py-2 flex justify-between mb-4">
             <button
               type="button"
               onClick={goToToday}

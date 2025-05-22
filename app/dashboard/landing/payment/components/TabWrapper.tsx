@@ -4,7 +4,7 @@ import { DataGrid } from "@/component-lib/datagrid";
 import { Dialog } from "@/component-lib/dialog";
 import { TabItem, Tabs } from "@/component-lib/tabs";
 import { useToast } from "@/component-lib/toast/useToast";
-import BarGraphDisplay from "@/components/BarGraph";
+// import BarGraphDisplay from "@/components/BarGraph";
 import { columns, fakeData } from "@/utils";
 import Image from "next/image";
 import React, { useState } from "react";

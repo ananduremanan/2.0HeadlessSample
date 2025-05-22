@@ -38,17 +38,8 @@ export default function page() {
     console.log(Object.fromEntries(formData));
   };
 
-  // const randomColorScheme = () => {
-  //   const { bgPrimary, textPrimary, textColor } = randomColorGenerator();
-
-  //   setBgPrimary(`${bgPrimary}`);
-  //   setTextPrimary(`${textPrimary}`);
-  //   setTextSecondary(textColor === "white" ? "text-white" : "text-gray-900");
-  // };
-
   return (
     <div className={`bg-white min-h-screen px-2 py-8 ${textPrimary}`}>
-      <span className={textSecondary}>Current color: {bgPrimary}</span>
       <section className="w-full flex justify-between items-center">
         <div className="w-96">
           <Input placeholder="search" type="search" />
