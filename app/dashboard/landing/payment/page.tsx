@@ -14,7 +14,7 @@ export default function Payment() {
   return (
     <div className="bg-white min-h-screen flex flex-col md:flex-row gap-6 text-black px-2 py-8">
       <div className="flex-1">
-        <section>
+        <section className="mt-10 md:mt-0">
           <Breadcrumb />
           <div className="text-2xl font-bold mt-4">Overview</div>
           <div className="text-xs text-gray-400">You can see the breadcrumb above auto Generated with breadcrumb component</div>

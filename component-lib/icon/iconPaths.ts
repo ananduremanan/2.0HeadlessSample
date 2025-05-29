@@ -177,3 +177,9 @@ export const cloudDownload: any = [
     key: "ui1hmy",
   },
 ];
+
+export const menuIcon: any = [
+  { type: "path", d: "M4 12h16", key: "menu-top" },
+  { type: "path", d: "M4 18h16", key: "menu-middle" },
+  { type: "path", d: "M4 6h16", key: "menu-bottom" },
+];

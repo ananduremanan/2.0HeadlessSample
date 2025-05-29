@@ -41,7 +41,7 @@ export default function page() {
   return (
     <div className={`bg-white min-h-screen px-2 py-8 ${textPrimary}`}>
       <section className="w-full flex justify-between items-center">
-        <div className="w-96">
+        <div className="w-96 mt-10 md:mt-0">
           <Input placeholder="search" type="search" />
         </div>
         <div className="space-x-2 w-96 hidden md:flex">
