@@ -28,7 +28,7 @@ export const initialMenuData: MenuData = {
           id: 3,
           name: "Transaction",
           icon: "transaction",
-          path: "/transaction",
+          path: "/dashboard/landing/tetris",
         },
         {
           id: 4,
